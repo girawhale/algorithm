@@ -1,3 +1,5 @@
+package 자료구조;
+
 import java.util.*;
 
 public class prog67258_보석_쇼핑 {

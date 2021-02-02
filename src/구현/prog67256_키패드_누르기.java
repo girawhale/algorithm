@@ -1,3 +1,5 @@
+package 구현;
+
 public class prog67256_키패드_누르기 {
     StringBuilder sb = new StringBuilder();
     int prevL = 10, prevR = 12;

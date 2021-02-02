@@ -1,3 +1,5 @@
+package 완전탐색;
+
 import java.util.*;
 
 public class prog67257_수식_최대화 {

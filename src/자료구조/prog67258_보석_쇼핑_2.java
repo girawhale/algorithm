@@ -1,3 +1,5 @@
+package 자료구조;
+
 import java.util.*;
 
 public class prog67258_보석_쇼핑_2 {
@@ -26,11 +28,5 @@ public class prog67258_보석_쇼핑_2 {
         }
 
         return new int[]{start, start + len - 1};
-    }
-
-    public static void main(String[] args) {
-        new prog67258_보석_쇼핑_2().solution(new String[]{"DIA", "RUBY", "RUBY", "DIA", "DIA", "EMERALD", "SAPPHIRE", "DIA"});
-        new prog67258_보석_쇼핑_2().solution(new String[]{"XYZ", "XYZ", "XYZ"});
-        new prog67258_보석_쇼핑_2().solution(new String[]{"DIA", "EM", "EM", "RUB", "DIA"});
     }
 }

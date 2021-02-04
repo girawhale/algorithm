@@ -31,12 +31,11 @@ public class boj1039_교환 {
                 int tmp = num;
                 int n1 = tmp / pow[i] % 10;
                 int n2 = tmp / pow[j] % 10;
-                if (j == len - 1 && n1 == 0) continue;
 
                 tmp = tmp - n1 * pow[i] - n2 * pow[j] +
                         n1 * pow[j] + n2 * pow[i];
 
-                if (visit[cnt][tmp]) continue;
+                if (tmp < pow[len - 1] || visit[cnt][tmp]) continue;
                 visit[cnt][tmp] = true;
 
                 solve(cnt + 1, tmp);

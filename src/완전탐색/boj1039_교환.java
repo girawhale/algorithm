@@ -1,3 +1,5 @@
+package 완전탐색;
+
 import java.util.Scanner;
 
 public class boj1039_교환 {

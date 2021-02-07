@@ -1,4 +1,4 @@
-package 자료구조;
+package 자료구조.Map;
 
 import java.util.*;
 

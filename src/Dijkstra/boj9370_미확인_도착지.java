@@ -1,21 +1,27 @@
 package Dijkstra;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.*;
 
 public class boj9370_미확인_도착지 {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int T = sc.nextInt();
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int T = Integer.parseInt(br.readLine());
 
         while (T-- > 0) {
-            int n = sc.nextInt(), m = sc.nextInt(), t = sc.nextInt();
-            int s = sc.nextInt(), g = sc.nextInt(), h = sc.nextInt();
+            StringTokenizer st = new StringTokenizer(br.readLine());
+            int n = Integer.parseInt(st.nextToken()), m = Integer.parseInt(st.nextToken()), t = Integer.parseInt(st.nextToken());
+            st = new StringTokenizer(br.readLine());
+            int s = Integer.parseInt(st.nextToken()), g = Integer.parseInt(st.nextToken()), h = Integer.parseInt(st.nextToken());
 
             List<int[]>[] adj = new ArrayList[n + 1];
             for (int i = 1; i <= n; i++) adj[i] = new ArrayList<>();
 
             while (m-- > 0) {
-                int n1 = sc.nextInt(), n2 = sc.nextInt(), d = sc.nextInt();
+                st = new StringTokenizer(br.readLine());
+                int n1 = Integer.parseInt(st.nextToken()), n2 = Integer.parseInt(st.nextToken()), d = Integer.parseInt(st.nextToken());
                 adj[n1].add(new int[]{n2, d});
                 adj[n2].add(new int[]{n1, d});
             }
@@ -23,7 +29,7 @@ public class boj9370_미확인_도착지 {
             Set<Integer> dest = new HashSet<>();
             TreeSet<Integer> ans = new TreeSet<>();
             while (t-- > 0)
-                dest.add(sc.nextInt());
+                dest.add(Integer.parseInt(br.readLine()));
 
             int[] dist = new int[n + 1];
             Arrays.fill(dist, Integer.MAX_VALUE);

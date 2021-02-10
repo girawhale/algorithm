@@ -8,15 +8,13 @@ public class prog42899_실패율 {
         for (int i = 0; i < N; i++) arr[i] = new Stage(i + 1);
 
         for (int stage : stages) {
-            for (int i = 0; i < Math.min(stage, N); i++)
-                arr[i].count++;
-
+            arr[Math.min(stage, N) - 1].count++;
             if (stage != N + 1) arr[stage - 1].fail++;
         }
+        for (int i = N - 1; i > 0; i--)
+            arr[i - 1].count += arr[i].count;
 
-        Arrays.sort(arr);
-
-        return Arrays.stream(arr).mapToInt(s -> s.num).toArray();
+        return Arrays.stream(arr).sorted().mapToInt(s -> s.num).toArray();
     }
 
     class Stage implements Comparable<Stage> {

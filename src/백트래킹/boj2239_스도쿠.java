@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
-public class boj2580_스도쿠 {
+public class boj2239_스도쿠 {
     static List<int[]> list;
     static int[][] sudoku;
 
@@ -15,8 +15,9 @@ public class boj2580_스도쿠 {
 
         list = new ArrayList<>();
         for (int i = 0; i < 9; i++) {
+            int[] in = Arrays.stream(sc.next().split("")).mapToInt(Integer::parseInt).toArray();
             for (int j = 0; j < 9; j++) {
-                sudoku[i][j] = sc.nextInt();
+                sudoku[i][j] = in[j];
                 if (sudoku[i][j] == 0) list.add(new int[]{i, j});
             }
         }
@@ -43,7 +44,7 @@ public class boj2580_스도쿠 {
 
         if (n == list.size()) {
             for (int[] s : sudoku) {
-                Arrays.stream(s).forEach(i -> System.out.print(i + " "));
+                Arrays.stream(s).forEach(System.out::print);
                 System.out.println();
             }
             System.exit(0);

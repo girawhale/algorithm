@@ -7,7 +7,7 @@ public class boj2931_가스관 {
     static char[][] map;
     static boolean[][] visit;
     static int R, C;
-    static char[] pipe = {'+','1', '2', '3', '4', '|', '-'};
+    static char[] pipe = {'+', '1', '2', '3', '4', '|', '-'};
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -70,7 +70,7 @@ public class boj2931_가스관 {
 
     static int getNextDir(char pipe, int in) {
         if (pipe == '+')
-            return ~((1 << 4) | (1 << in));
+            return 1 << 4 - 1;
         else if (pipe == '|') {
             if (in == 0) return 1 << 0;
             else if (in == 1) return 1 << 1;

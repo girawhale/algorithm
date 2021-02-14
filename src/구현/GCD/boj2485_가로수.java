@@ -1,4 +1,4 @@
-package GCD;
+package 구현.GCD;
 
 import java.util.Arrays;
 import java.util.Scanner;

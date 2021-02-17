@@ -15,9 +15,10 @@ public class prog42891_무지의_먹방_라이브 {
         int idx = 0;
         while (idx < foods.size()) {
             long min = foods.get(idx).time - prev;
+            long tmp = min * (foods.size() - idx);
 
-            if (min * (foods.size() - idx) > k) break;
-            k -= min * (foods.size() - idx);
+            if (k < tmp) break;
+            k -= tmp;
 
             prev += min;
             idx++;

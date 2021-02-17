@@ -2,7 +2,7 @@ package 구현;
 
 import java.util.Arrays;
 
-public class prog42899_실패율 {
+public class prog42889_실패율 {
     public int[] solution(int N, int[] stages) {
         Stage[] arr = new Stage[N];
         for (int i = 0; i < N; i++) arr[i] = new Stage(i + 1);

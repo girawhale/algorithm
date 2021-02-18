@@ -1,3 +1,5 @@
+package BFS;
+
 import java.util.*;
 
 public class boj2151_거울_설치 {

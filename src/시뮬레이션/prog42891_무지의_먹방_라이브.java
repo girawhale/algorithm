@@ -25,8 +25,10 @@ public class prog42891_무지의_먹방_라이브 {
         }
 
         long finalPrev = prev;
-        foods = foods.stream().filter(f -> f.time > finalPrev)
-                .sorted(Comparator.comparingInt(f -> f.idx)).collect(Collectors.toList());
+        foods = foods.stream()
+                .filter(f -> f.time > finalPrev)
+                .sorted(Comparator.comparingInt(f -> f.idx))
+                .collect(Collectors.toList());
         return idx == foods.size() ? -1 : foods.get((int) (k % foods.size())).idx;
     }
 

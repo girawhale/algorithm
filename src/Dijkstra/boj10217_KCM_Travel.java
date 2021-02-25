@@ -1,3 +1,5 @@
+package Dijkstra;
+
 import java.util.*;
 
 public class boj10217_KCM_Travel {

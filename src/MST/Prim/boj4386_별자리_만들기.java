@@ -1,4 +1,4 @@
-package MST;
+package MST.Prim;
 
 import java.util.ArrayList;
 import java.util.List;

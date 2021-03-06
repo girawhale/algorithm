@@ -30,7 +30,6 @@ public class prog60059_자물쇠와_열쇠 {
 
                 if (lock[i][j] == k) return false;
             }
-            System.out.println();
         }
         return true;
     }

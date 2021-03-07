@@ -8,13 +8,15 @@ public class prog60059_자물쇠와_열쇠 {
         N = lock.length;
 
         for (int k = 0; k < 4; k++) {
-            for (int i = -M; i < N + M; i++) {
-                for (int j = -M; j < N + M; j++)
+            for (int i = -M; i < N; i++) {
+                for (int j = -M; j < N; j++)
                     if (solve(key, lock, i, j)) return true;
             }
 
             int[][] rotate = new int[M][M];
-            for (int i = 0; i < M; i++) for (int j = 0; j < M; j++) rotate[i][j] = key[M - j - 1][i];
+            for (int i = 0; i < M; i++)
+                for (int j = 0; j < M; j++)
+                    rotate[i][j] = key[M - j - 1][i];
             key = rotate;
         }
 

@@ -20,7 +20,7 @@ public class prog60058_괄호_변환 {
             return "(" + v + ")" +
                     u.substring(1, u.length() - 1).chars()
                             .mapToObj(i -> i == '(' ? ')' : '(')
-                            .collect(StringBuilder::new, StringBuilder::appendCodePoint, StringBuilder::append);
+                            .collect(StringBuilder::new, StringBuilder::append, StringBuilder::append);
     }
 
     boolean check(String str) {

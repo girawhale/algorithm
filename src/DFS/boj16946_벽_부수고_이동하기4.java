@@ -22,11 +22,12 @@ public class boj16946_벽_부수고_이동하기4 {
             map[i] = br.readLine().chars().map(n -> n - '0').toArray();
 
         int cnt = 0;
-        Map<Integer, Integer> countMap = new HashMap<>();
+        List<Integer> count = new ArrayList<>();
+        count.add(0);
         for (int i = 0; i < N; i++)
             for (int j = 0; j < M; j++)
                 if (map[i][j] == 0 && memo[i][j] == 0)
-                    countMap.put(++cnt, dfs(i, j, cnt));
+                    count.add(dfs(i, j, ++cnt));
 
         StringBuilder sb = new StringBuilder();
         List<Integer> ck = new ArrayList<>();
@@ -40,7 +41,7 @@ public class boj16946_벽_부수고_이동하기4 {
                         if (ny < 0 || nx < 0 || ny >= N || nx >= M || ck.contains(memo[ny][nx]))
                             continue;
                         ck.add(memo[ny][nx]);
-                        ret += countMap.getOrDefault(memo[ny][nx], 0);
+                        ret += count.get(memo[ny][nx]);
                     }
                     ck.clear();
                     sb.append(ret % 10);

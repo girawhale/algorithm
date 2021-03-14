@@ -11,7 +11,7 @@ public class boj5213_과외맨 {
         int[][] nums = new int[N][2 * N], tiles = new int[N][2 * N];
 
         for (int i = 0; i < N; i++) {
-            int tmp = i % 2 == 1 ? 1 : 0;
+            int tmp = i % 2;
             for (int j = tmp; j < 2 * N - tmp; j++) {
                 nums[i][j] = sc.nextInt();
                 tiles[i][j] = (cnt++ / 2) + 1;

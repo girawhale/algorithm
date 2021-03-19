@@ -27,6 +27,7 @@ public class prog60059_자물쇠와_열쇠 {
         for (int i = 0; i < N; i++) {
             for (int j = 0; j < N; j++) {
                 int ky = i - y, kx = j - x, k;
+
                 if (ky < 0 || kx < 0 || ky >= M || kx >= M) k = 0;
                 else k = key[ky][kx];
 

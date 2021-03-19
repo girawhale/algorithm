@@ -6,6 +6,7 @@ import java.util.List;
 public class prog60061_기둥과_보_설치 {
     int N;
     boolean[][] pillars, beams;
+    int[] dx = {-1, -1, -1, 0, 0, 0, 1, 1, 1}, dy = {-1, 0, 1, -1, 0, 1, -1, 0, 1};
 
     public int[][] solution(int n, int[][] build_frame) {
         N = n;
@@ -20,13 +21,14 @@ public class prog60061_기둥과_보_설치 {
                 boolean[][] tmp = b[2] == 0 ? pillars : beams;
                 tmp[b[0]][b[1]] = false;
 
-                for (int i = 0; i < n; i++) {
-                    for (int j = 0; j < n; j++) {
-                        if ((beams[i][j] && !checkBeam(new int[]{i, j})) ||
-                                (pillars[i][j] && !checkPillar(new int[]{i, j}))) {
-                            tmp[b[0]][b[1]] = true;
-                            break;
-                        }
+                for (int k = 0; k < 9; k++) {
+                    int x = b[0] + dx[k], y = b[1] + dy[k];
+                    if(x < 0 || y < 0 || x > n || y > n) continue;
+
+                    if ((beams[x][y] && !checkBeam(new int[]{x, y})) ||
+                            (pillars[x][y] && !checkPillar(new int[]{x, y}))) {
+                        tmp[b[0]][b[1]] = true;
+                        break;
                     }
                 }
             }
@@ -44,15 +46,11 @@ public class prog60061_기둥과_보_설치 {
     }
 
     boolean checkPillar(int[] b) {
-        if (b[1] == 0 || pillars[b[0]][b[1] - 1] || (b[0] > 1 && beams[b[0] - 1][b[1]]) || beams[b[0]][b[1]])
-            return true;
-        return false;
+        return b[1] == 0 || pillars[b[0]][b[1] - 1] || (b[0] > 0 && beams[b[0] - 1][b[1]]) || beams[b[0]][b[1]];
     }
 
     boolean checkBeam(int[] b) {
-        if (pillars[b[0]][b[1] - 1] || pillars[b[0] + 1][b[1] - 1] ||
-                b[0] > 1 && b[0] < N && beams[b[0] - 1][b[1]] && beams[b[0] + 1][b[1]])
-            return true;
-        return false;
+        return pillars[b[0]][b[1] - 1] || pillars[b[0] + 1][b[1] - 1] ||
+                b[0] > 0 && b[0] < N && beams[b[0] - 1][b[1]] && beams[b[0] + 1][b[1]];
     }
 }

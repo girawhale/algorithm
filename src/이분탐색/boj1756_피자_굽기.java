@@ -22,18 +22,18 @@ public class boj1756_피자_굽기 {
 
         int prevIdx = D;
         for (int i = 0; i < N; i++) {
-            int s = 0, e = prevIdx;
-            if (e < 0) {
-                System.out.println(0);
-                return;
-            }
+            int s = 0, e = prevIdx - 1;
             while (s < e) {
                 int m = (s + e) / 2;
 
                 if (min[m] >= pizza[i]) s = m + 1;
                 else e = m;
             }
-            prevIdx = e - 1;
+            if (e < 0) {
+                System.out.println(0);
+                return;
+            }
+            prevIdx = e;
         }
         System.out.println(prevIdx + 1);
     }

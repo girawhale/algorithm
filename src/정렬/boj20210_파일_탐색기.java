@@ -1,3 +1,5 @@
+package 정렬;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -16,13 +18,13 @@ public class boj20210_파일_탐색기 {
     }
 
     static class File implements Comparable<File> {
+        static Pattern pattern = Pattern.compile("\\D|\\d+");
         String filename;
         List<Group> list;
 
         File(String str) {
             filename = str;
             list = new ArrayList<>();
-            Pattern pattern = Pattern.compile("\\D|\\d+");
             Matcher matcher = pattern.matcher(str);
 
             while (matcher.find())

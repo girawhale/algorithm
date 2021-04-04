@@ -1,4 +1,4 @@
-package 문자열;
+package 문자열.정규식;
 
 import java.util.*;
 import java.util.regex.Matcher;

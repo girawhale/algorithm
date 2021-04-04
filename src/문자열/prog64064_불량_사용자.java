@@ -10,7 +10,7 @@ public class prog64064_불량_사용자 {
 
     public int solution(String[] user_id, String[] banned_id) {
         banPatterns = Arrays.stream(banned_id)
-                .map(b -> b.replace("*", ".")).toArray(size -> new String[size]);
+                .map(b -> b.replace("*", ".")).toArray(String[]::new);
 
         solve(0,0,user_id);
         return set.size();

@@ -1,6 +1,6 @@
 package 자료구조.Trie;
 
-public class prog17685_자동완성_Trie {
+public class prog17685_자동완성 {
     Trie root = new Trie();
 
     public int solution(String[] words) {

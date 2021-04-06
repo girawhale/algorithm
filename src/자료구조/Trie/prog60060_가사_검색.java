@@ -1,3 +1,5 @@
+package 자료구조.Trie;
+
 import java.util.*;
 
 public class prog60060_가사_검색 {
@@ -36,12 +38,12 @@ public class prog60060_가사_검색 {
 
         for (String word : words) {
             front.insert(word);
-            back.insert(new StringBuilder(word).reverse().toString());
+            back.insert(reverse(word));
         }
 
         return Arrays.stream(queries).mapToInt(
                 query -> query.charAt(0) == '?' ?
-                        back.find(new StringBuilder(query).reverse().toString(), 0) :
+                        back.find(reverse(query), 0) :
                         front.find(query, 0)).toArray();
     }
 
@@ -59,5 +61,9 @@ public class prog60060_가사_검색 {
         }
 
         return ans;
+    }
+
+    String reverse(String s) {
+        return new StringBuilder(s).reverse().toString();
     }
 }

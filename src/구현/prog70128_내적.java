@@ -1,3 +1,5 @@
+package 구현;
+
 import java.util.stream.IntStream;
 
 public class prog70128_내적 {

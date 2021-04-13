@@ -1,4 +1,4 @@
-package 비트마스킹;
+package 비트;
 
 import java.util.Scanner;
 

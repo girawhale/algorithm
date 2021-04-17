@@ -1,4 +1,4 @@
-package 시뮬레이션;
+package 구현.시뮬레이션;
 
 import java.util.Comparator;
 import java.util.List;

@@ -8,13 +8,9 @@ public class boj1052_물병 {
         int N = sc.nextInt(), K = sc.nextInt();
 
         int num = N;
-        while (true) {
-            int bitCount = Integer.bitCount(num);
-            if (bitCount <= K) {
-                System.out.println(num - N);
-                return;
-            }
+        while (Integer.bitCount(num) > K)
             num++;
-        }
+
+        System.out.println(num - N);
     }
 }

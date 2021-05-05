@@ -33,10 +33,7 @@ public class boj12886_돌그룹 {
                 int s1 = cur[g[0]];
                 int s2 = cur[g[1]];
 
-                int min = Math.min(s1, s2);
-                int max = Math.max(s1, s2);
-
-                int[] next = {max - min, min * 2, cur[g[2]]};
+                int[] next = {s2 - s1, s1 * 2, cur[g[2]]};
                 Arrays.sort(next);
 
                 if (visit[next[0]][next[1]]) continue;

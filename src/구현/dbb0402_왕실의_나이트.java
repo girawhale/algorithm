@@ -2,7 +2,7 @@ package 구현;
 
 import java.util.Scanner;
 
-public class ddb0402_왕실의_나이트 {
+public class dbb0402_왕실의_나이트 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int[] dy = {-2, -2, 2, 2, -1, 1, -1, 1};

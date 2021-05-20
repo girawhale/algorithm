@@ -1,5 +1,6 @@
 package 정렬;
 
+import java.util.Comparator;
 import java.util.Scanner;
 import java.util.stream.IntStream;
 
@@ -9,9 +10,8 @@ public class boj1599_민식어 {
         int N = sc.nextInt();
 
         IntStream.range(0, N)
-                .mapToObj(i -> sc.next().replace('k', 'c').replace("ng", "n~"))
-                .sorted()
-                .map(s -> s.replace('c', 'k').replace("n~", "ng"))
+                .mapToObj(i -> sc.next())
+                .sorted(Comparator.comparing(s -> s.replace('k', 'c').replace("ng", "n~")))
                 .forEach(System.out::println);
     }
 }

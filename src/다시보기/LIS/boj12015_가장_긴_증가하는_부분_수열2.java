@@ -1,4 +1,4 @@
-package 다시보기.이분탐색;
+package 다시보기.LIS;
 
 import java.io.BufferedReader;
 import java.io.IOException;

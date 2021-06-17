@@ -3,7 +3,7 @@ package 다시보기.LIS;
 import java.util.*;
 import java.util.stream.IntStream;
 
-public class boj17616_줄세우기 {
+public class boj2631_줄세우기 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int N = sc.nextInt();

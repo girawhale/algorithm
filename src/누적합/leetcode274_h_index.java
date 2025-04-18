@@ -1,5 +1,7 @@
 package 누적합;
 
+import java.util.Arrays;
+
 public class leetcode274_h_index {
     public int hIndex(int[] citations) {
         int[] counts = new int[1001];
@@ -13,6 +15,17 @@ public class leetcode274_h_index {
             total += counts[i];
 
             if (total >= i) {
+                return i;
+            }
+        }
+        return 0;
+    }
+
+    public int hIndex2(int[] citations) {
+        Arrays.sort(citations);
+        int len = citations.length;
+        for (int i = 0; i < len; i++) {
+            if (len - i <= citations[i]) {
                 return i;
             }
         }

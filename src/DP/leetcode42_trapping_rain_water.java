@@ -1,3 +1,5 @@
+package DP;
+
 public class leetcode42_trapping_rain_water {
     public int trap(int[] height) {
         int n = height.length;
